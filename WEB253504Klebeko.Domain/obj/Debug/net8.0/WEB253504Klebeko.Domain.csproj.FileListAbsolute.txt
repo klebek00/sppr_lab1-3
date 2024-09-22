@@ -1,0 +1,11 @@
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\bin\Debug\net8.0\WEB253504Klebeko.Domain.deps.json
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\bin\Debug\net8.0\WEB253504Klebeko.Domain.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\bin\Debug\net8.0\WEB253504Klebeko.Domain.pdb
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\WEB253504Klebeko.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\WEB253504Klebeko.Domain.AssemblyInfoInputs.cache
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\WEB253504Klebeko.Domain.AssemblyInfo.cs
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\WEB253504Klebeko.Domain.csproj.CoreCompileInputs.cache
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\WEB253504Klebeko.Domain.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\refint\WEB253504Klebeko.Domain.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\WEB253504Klebeko.Domain.pdb
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Domain\obj\Debug\net8.0\ref\WEB253504Klebeko.Domain.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "WEB253504Klebeko.Domain/1.0.0": {
+        "runtime": {
+          "WEB253504Klebeko.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WEB253504Klebeko.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

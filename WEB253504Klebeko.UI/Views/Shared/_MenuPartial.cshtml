@@ -1,0 +1,16 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower() ?? String.Empty;
+}
+<a asp-controller="Home" asp-action="Index" class="navbar-brand">WebLabsV02</a>
+<div class="navbar-nav">
+    <a class="nav-item nav-link @(controller == "home"?"active":"")" asp-controller="Home" asp-action="Index">Лр 1</a>
+    
+    <a class="nav-item nav-link @(controller == "product"?"active":"")" asp-controller="Medicine" asp-action="Index">Каталог</a>
+    
+    <a class="nav-item nav-link @(controller == "admin"?"active":"")" asp-area="Admin" asp-page="/Index">Администрирование</a>
+    
+</div>

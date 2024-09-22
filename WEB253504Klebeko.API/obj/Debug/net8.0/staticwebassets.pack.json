@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\12.jpg",
+      "PackagePath": "staticwebassets\\Images\\12.jpg"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\22.jpg",
+      "PackagePath": "staticwebassets\\Images\\22.jpg"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\32.jpg",
+      "PackagePath": "staticwebassets\\Images\\32.jpg"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\42.jpg",
+      "PackagePath": "staticwebassets\\Images\\42.jpg"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\52.jpg",
+      "PackagePath": "staticwebassets\\Images\\52.jpg"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\default-profile-picture.png",
+      "PackagePath": "staticwebassets\\Images\\default-profile-picture.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WEB253504Klebeko.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WEB253504Klebeko.API.props",
+      "PackagePath": "build\\WEB253504Klebeko.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WEB253504Klebeko.API.props",
+      "PackagePath": "buildMultiTargeting\\WEB253504Klebeko.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WEB253504Klebeko.API.props",
+      "PackagePath": "buildTransitive\\WEB253504Klebeko.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
