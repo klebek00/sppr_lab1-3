@@ -2,8 +2,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WEB253504Klebeko.UI.Extensions;
 using WEB253504Klebeko.API.Data;
+using WEB253504Klebeko.UI.Models;
+using WEB253504Klebeko.API.Services.MedicineService;
+using WEB253504Klebeko.UI.Services.MedicineService;
+using WEB253504Klebeko.UI.Services.CategoryService;
 
 var builder = WebApplication.CreateBuilder(args);
+
+string connectionDBString = builder.Configuration.GetConnectionString("Default");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionDBString));
+
 
 // Add services to the container.
 
@@ -11,12 +19,17 @@ builder.RegisterCustomServices();
 
 builder.Services.AddRazorPages();
 
-string connectionDBString = builder.Configuration.GetConnectionString("Default");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionDBString));
+var uriData = builder.Configuration.GetSection("UriData").Get<UriData>()!;
+
+builder.Services
+.AddHttpClient<WEB253504Klebeko.UI.Services.MedicineService.IMedicineService, ApiMedicineService>(opt => opt.BaseAddress = new Uri(uriData.ApiUri));
+builder.Services
+.AddHttpClient<WEB253504Klebeko.UI.Services.CategoryService.ICategoryService, ApiCategoryService>(opt => opt.BaseAddress = new Uri(uriData.ApiUri));
+
+
 
 var app = builder.Build();
 
-//await DbInitializer.SeedData(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -30,7 +43,7 @@ else
     app.UseHsts();
 }
 
-app.UseStaticFiles();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

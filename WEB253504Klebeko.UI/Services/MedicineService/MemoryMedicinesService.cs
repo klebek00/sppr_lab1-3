@@ -24,11 +24,11 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         {
             _medicines = new List<Medicines>
             {
-                new Medicines { Id = 1, Name = "Эффералган", Description = "Description for Product 1", Category = _categories.Find(c=>c.NormalizedName.Equals("antipyretic")), Price = 15, Image = "/images/12.jpg", Mime = "image/jpeg" },
-                new Medicines { Id = 2, Name = "Доксициклин", Description = "Description for Product 2", Category = _categories.Find(c=>c.NormalizedName.Equals("antibiotics")), Price = 3, Image = "/images/22.jpg", Mime = "image/jpeg" },
-                new Medicines { Id = 3, Name = "Нафазолин", Description = "Description for Product 2", Category = _categories.Find(c=>c.NormalizedName.Equals("drops")), Price = 1, Image = "/images/32.jpg", Mime = "image/jpeg" },
-                new Medicines { Id = 4, Name = "Фенкарол", Description = "Description for Product 2", Category = _categories.Find(c=>c.NormalizedName.Equals("antihistamines")), Price = 16, Image = "/images/42.jpg", Mime = "image/jpeg" },
-                new Medicines { Id = 5, Name = "Доктор Мом", Description = "Description for Product 3", Category = _categories.Find(c=>c.NormalizedName.Equals("syrups")), Price = 10, Image = "/images/52.jpg", Mime = "image/jpeg" }
+                new Medicines { Id = 1, Name = "Эффералган", Description = "Description for Product 1", CategoryId = _categories.Find(c=>c.NormalizedName.Equals("antipyretic")).Id, Price = 15, Image = "/images/12.jpg", Mime = "image/jpeg" },
+                new Medicines { Id = 2, Name = "Доксициклин", Description = "Description for Product 2", CategoryId = _categories.Find(c=>c.NormalizedName.Equals("antibiotics")).Id, Price = 3, Image = "/images/22.jpg", Mime = "image/jpeg" },
+                new Medicines { Id = 3, Name = "Нафазолин", Description = "Description for Product 2", CategoryId = _categories.Find(c=>c.NormalizedName.Equals("drops")).Id, Price = 1, Image = "/images/32.jpg", Mime = "image/jpeg" },
+                new Medicines { Id = 4, Name = "Фенкарол", Description = "Description for Product 2", CategoryId = _categories.Find(c=>c.NormalizedName.Equals("antihistamines")).Id, Price = 16, Image = "/images/42.jpg", Mime = "image/jpeg" },
+                new Medicines { Id = 5, Name = "Доктор Мом", Description = "Description for Product 3", CategoryId = _categories.Find(c=>c.NormalizedName.Equals("syrups")).Id, Price = 10, Image = "/images/52.jpg", Mime = "image/jpeg" }
             };
         }
 
@@ -37,9 +37,24 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         {
             int itemsPerPage = _configuration.GetValue<int>("ItemsPerPage");
 
+            //var data = _medicines
+            //    .Where(d => categoryNormalizedName == null ||
+            //        d.Category.NormalizedName.Equals(categoryNormalizedName))
+            //    .ToList();
+
+            int? categoryId = null;
+            if (!string.IsNullOrEmpty(categoryNormalizedName))
+            {
+                var category = _categories.FirstOrDefault(c => c.NormalizedName == categoryNormalizedName);
+                if (category != null)
+                {
+                    categoryId = category.Id;
+                }
+            }
+
+            // Фильтруем по CategoryId, если он найден
             var data = _medicines
-                .Where(d => categoryNormalizedName == null ||
-                    d.Category.NormalizedName.Equals(categoryNormalizedName))
+                .Where(d => categoryId == null || d.CategoryId == categoryId)
                 .ToList();
 
             int totalItems = data.Count;

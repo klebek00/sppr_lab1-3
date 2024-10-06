@@ -297,3 +297,4 @@ D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\runtime
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\WEB253504Klebeko.API.dll
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\WEB253504Klebeko.API.pdb
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\obj\Debug\net8.0\WEB253504Klebeko.UI.sourcelink.json

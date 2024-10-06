@@ -1,0 +1,61 @@
+﻿@page
+@model WEB253504Klebeko.UI.Areas.Admin.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Medicines</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Medicines.Name" class="control-label"></label>
+                <input asp-for="Medicines.Name" class="form-control" />
+                <span asp-validation-for="Medicines.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicines.Description" class="control-label"></label>
+                <input asp-for="Medicines.Description" class="form-control" />
+                <span asp-validation-for="Medicines.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicines.CategoryId" class="control-label"></label>
+                <input asp-for="Medicines.CategoryId" class="form-control" />
+                <span asp-validation-for="Medicines.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicines.Price" class="control-label"></label>
+                <input asp-for="Medicines.Price" class="form-control" />
+                <span asp-validation-for="Medicines.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicines.Image" class="control-label"></label>
+                <input asp-for="Medicines.Image" class="form-control" />
+                <span asp-validation-for="Medicines.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicines.Mime" class="control-label"></label>
+                <input asp-for="Medicines.Mime" class="form-control" />
+                <span asp-validation-for="Medicines.Mime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicines.Category" class="control-label"></label>
+                <input asp-for="Medicines.Category" class="form-control" />
+                <span asp-validation-for="Medicines.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
