@@ -17,12 +17,36 @@
       "PackagePath": "staticwebassets\\Images\\42.jpg"
     },
     {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\44dzzesk.png",
+      "PackagePath": "staticwebassets\\Images\\44dzzesk.png"
+    },
+    {
       "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\52.jpg",
       "PackagePath": "staticwebassets\\Images\\52.jpg"
     },
     {
       "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\default-profile-picture.png",
       "PackagePath": "staticwebassets\\Images\\default-profile-picture.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\egymjjfp.png",
+      "PackagePath": "staticwebassets\\Images\\egymjjfp.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\if52p43w.png",
+      "PackagePath": "staticwebassets\\Images\\if52p43w.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\qsfquh2a.png",
+      "PackagePath": "staticwebassets\\Images\\qsfquh2a.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\shpc21ng.png",
+      "PackagePath": "staticwebassets\\Images\\shpc21ng.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\usxunjzk.png",
+      "PackagePath": "staticwebassets\\Images\\usxunjzk.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WEB253504Klebeko.API.Microsoft.AspNetCore.StaticWebAssets.props",

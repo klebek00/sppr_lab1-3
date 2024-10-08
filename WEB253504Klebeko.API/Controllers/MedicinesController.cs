@@ -9,6 +9,7 @@ using WEB253504Klebeko.API.Data;
 using WEB253504Klebeko.Domain.Entities;
 using WEB253504Klebeko.Domain.Models;
 using WEB253504Klebeko.API.Services.MedicineService;
+using Azure;
 
 namespace WEB253504Klebeko.API.Controllers
 {
@@ -86,7 +87,16 @@ namespace WEB253504Klebeko.API.Controllers
         [HttpPost]
         public async Task<ActionResult<ResponseData<Medicines>>> PostMedicines(Medicines medicines)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); // Вернуть 400, если модель не валидна
+            }
             var createMed = await _medicineService.CreateMedicAsync(medicines);
+
+            if (createMed == null || createMed.Data == null)
+            {
+                return StatusCode(500, "Ошибка при создании медикамента.");
+            }
 
             return CreatedAtAction("GetMedicines", new { id = createMed.Data.Id }, createMed);
         }

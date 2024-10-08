@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using WEB253504Klebeko.Domain.Entities;
 using WEB253504Klebeko.Domain.Models;
+using WEB253504Klebeko.UI.Services.FileService;
 
 namespace WEB253504Klebeko.UI.Services.MedicineService
 {
@@ -14,9 +15,12 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         private readonly HttpContext _httpContext;
         ILogger _logger;
         string _pageSize;
-        public ApiMedicineService(HttpClient httpClient, IConfiguration configuration, ILogger<ApiMedicineService> logger)
+        private readonly IFileService _fileService;
+
+        public ApiMedicineService(HttpClient httpClient, IConfiguration configuration, ILogger<ApiMedicineService> logger, IFileService fileService)
         {
             _httpClient = httpClient;
+            _fileService = fileService;
             _pageSize = configuration.GetSection("ItemsPerPage").Value;
             _serializerOptions = new JsonSerializerOptions()
             {
@@ -26,18 +30,58 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         }
         public async Task<ResponseData<Medicines>> CreateMedicAsync(Medicines product, IFormFile? formFile)
         {
-            var uri = new Uri(_httpClient.BaseAddress.AbsoluteUri + "Medicines");
-            var response = await _httpClient.PostAsJsonAsync(uri, product, _serializerOptions);
-            if (response.IsSuccessStatusCode)
+            product.Image = "Images/noimage.jpg";
+
+            // Сохранить файл изображения
+            if (formFile != null)
             {
-                var data = await response
-                    .Content
-                    .ReadFromJsonAsync<ResponseData<Medicines>>(_serializerOptions);
-                return data;
+                var imageUrl = await _fileService.SaveFileAsync(formFile);
+                if (!string.IsNullOrEmpty(imageUrl))
+                    product.Image = imageUrl;
             }
-            _logger.LogError($"-----> object not created. Error:{ response.StatusCode.ToString()}");
-            return ResponseData<Medicines>.Error($"Объект не добавлен. Error:{response.StatusCode.ToString()}");
+
+            _logger.LogInformation($"Создание медикамента: {product.Name}, CategoryId: {product.CategoryId}");
+
+            var uri = new Uri(_httpClient.BaseAddress.AbsoluteUri + "Medicines");
+            _logger.LogInformation($"Отправка запроса на: {uri}");
+
+            try
+            {
+                var response = await _httpClient.PostAsJsonAsync(uri, product, _serializerOptions);
+
+                // Логируем полученный статус и контент
+                _logger.LogInformation($"Получен статус: {response.StatusCode}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var data = await response.Content.ReadFromJsonAsync<ResponseData<Medicines>>(_serializerOptions);
+                    return data;
+                }
+
+                // Если статус не успешный, логируем содержимое ошибки
+                var errorContent = await response.Content.ReadAsStringAsync();
+                _logger.LogError($"-----> объект не создан. Ошибка: {response.StatusCode} - Контент: {errorContent}");
+
+                return ResponseData<Medicines>.Error($"Объект не добавлен. Ошибка: {response.StatusCode}, детали: {errorContent}");
+            }
+            catch (HttpRequestException httpEx)
+            {
+                _logger.LogError(httpEx, "Ошибка при отправке HTTP-запроса");
+                return ResponseData<Medicines>.Error("Ошибка сети или недоступен сервер.");
+            }
+            catch (JsonException jsonEx)
+            {
+                _logger.LogError(jsonEx, "Ошибка сериализации/десериализации JSON");
+                return ResponseData<Medicines>.Error("Ошибка обработки данных.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Общая ошибка при создании медикамента");
+                return ResponseData<Medicines>.Error("Объект не добавлен из-за неизвестной ошибки.");
+            }
         }
+
+
 
         public async Task DeleteMedicAsync(int id)
         {
@@ -52,48 +96,12 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         }
 
 
-        //public async Task<ResponseData<ListModel<Medicines>>> GetMedicListAsync(string? categoryNormalizedName, int pageNo = 1)
-        //{
-        //    var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}medicines/");
-
-        //    if (categoryNormalizedName != null)
-        //    {
-        //        urlString.Append($"{categoryNormalizedName}/");
-        //    }
-        //    if (pageNo > 1)
-        //    {
-        //        urlString.Append($"page{pageNo}");
-        //    };
-        //    // добавить размер страницы в строку запроса
-        //    if (!_pageSize.Equals("3"))
-        //    {
-        //        urlString.Append(QueryString.Create("pageSize", _pageSize));
-        //    }
-        //    Console.WriteLine($"Requesting URL: {urlString}");
-        //    // отправить запрос к API
-        //    var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
-
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        try
-        //        {
-        //            return await response
-        //                    .Content
-        //                    .ReadFromJsonAsync<ResponseData<ListModel<Medicines>>>(_serializerOptions);
-        //        }
-        //        catch (JsonException ex)
-        //        {
-        //            _logger.LogError($"-----> Ошибка: {ex.Message}");
-        //            return ResponseData<ListModel<Medicines>>.Error($"Ошибка: {ex.Message}");
-        //        }
-        //    }
-        //    _logger.LogError($"-----> Данные не получены от сервера. Error: { response.StatusCode.ToString()}");
-
-        //    return ResponseData<ListModel<Medicines>>.Error($"1Данные не получены от сервера. Error: {response.StatusCode.ToString()}");
-
-        //}
-        public async Task<ResponseData<ListModel<Medicines>>> GetMedicListAsync(string? categoryNormalizedName, int pageNo = 1)
+        public async Task<ResponseData<ListModel<Medicines>>> GetMedicListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = -1)
         {
+            pageSize = pageSize == -1 ? 3 : pageSize;
+
+            _pageSize = pageSize.ToString();
+
             var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}medicines/");
 
             if (!string.IsNullOrEmpty(categoryNormalizedName))
@@ -136,6 +144,14 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
 
         public async Task UpdateMedicAsync(int id, Medicines product, IFormFile? formFile)
         {
+            if (formFile != null)
+            {
+                var imageUrl = await _fileService.SaveFileAsync(formFile);
+                // Добавить в объект Url изображения
+                if (!string.IsNullOrEmpty(imageUrl))
+                    product.Image = imageUrl;
+            }
+
             var uri = new UriBuilder(_httpClient.BaseAddress!.ToString(), "medicines").Uri;
 
             var response = await _httpClient.PutAsJsonAsync(uri, product, _serializerOptions);
@@ -149,9 +165,13 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         }
         public async Task<ResponseData<Medicines>> GetMedicByIdAsync(int id)
         {
-            var uri = new UriBuilder(_httpClient.BaseAddress!.ToString(), "medicines").Uri;
+            var uri = new Uri($"{_httpClient.BaseAddress!.AbsoluteUri}medicines/{id}");
 
             var response = await _httpClient.GetAsync(uri);
+
+            var content = await response.Content.ReadAsStringAsync();
+            _logger.LogError($"-----> object not created. Error: {response.StatusCode}, Content: {content}");
+
 
             if (!response.IsSuccessStatusCode)
             {

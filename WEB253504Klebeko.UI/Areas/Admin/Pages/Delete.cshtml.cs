@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WEB253504Klebeko.API.Data;
 using WEB253504Klebeko.Domain.Entities;
+using WEB253504Klebeko.UI.Services.MedicineService;
 
 namespace WEB253504Klebeko.UI.Areas.Admin.Pages
 {
     public class DeleteModel : PageModel
     {
-        private readonly WEB253504Klebeko.API.Data.AppDbContext _context;
+        private readonly IMedicineService _mediicineService;
 
-        public DeleteModel(WEB253504Klebeko.API.Data.AppDbContext context)
+        public DeleteModel(IMedicineService medicineService)
         {
-            _context = context;
+            _mediicineService = medicineService;
         }
 
         [BindProperty]
@@ -29,7 +30,7 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
                 return NotFound();
             }
 
-            var medicines = await _context.Medicines.FirstOrDefaultAsync(m => m.Id == id);
+            var medicines = await _mediicineService.GetMedicByIdAsync((int)id);
 
             if (medicines == null)
             {
@@ -37,9 +38,10 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
             }
             else
             {
-                Medicines = medicines;
+                Medicines = medicines.Data;
             }
             return Page();
+
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
@@ -49,12 +51,11 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
                 return NotFound();
             }
 
-            var medicines = await _context.Medicines.FindAsync(id);
-            if (medicines != null)
+            var medicines = await _mediicineService.GetMedicByIdAsync((int)id);
+            if (medicines.Data != null)
             {
-                Medicines = medicines;
-                _context.Medicines.Remove(Medicines);
-                await _context.SaveChangesAsync();
+                Medicines = medicines.Data;
+                await _mediicineService.DeleteMedicAsync(medicines.Data.Id);
             }
 
             return RedirectToPage("./Index");

@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WEB253504Klebeko.API.Data;
 using WEB253504Klebeko.Domain.Entities;
+using WEB253504Klebeko.UI.Services.MedicineService;
 
 namespace WEB253504Klebeko.UI.Areas.Admin.Pages
 {
     public class DetailsModel : PageModel
     {
-        private readonly WEB253504Klebeko.API.Data.AppDbContext _context;
+        private readonly IMedicineService _mediicineService;
 
-        public DetailsModel(WEB253504Klebeko.API.Data.AppDbContext context)
+        public DetailsModel(IMedicineService medicineService)
         {
-            _context = context;
+            _mediicineService = medicineService;
         }
 
         public Medicines Medicines { get; set; } = default!;
@@ -28,14 +29,14 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
                 return NotFound();
             }
 
-            var medicines = await _context.Medicines.FirstOrDefaultAsync(m => m.Id == id);
+            var medicines = await _mediicineService.GetMedicByIdAsync((int)id);
             if (medicines == null)
             {
                 return NotFound();
             }
             else
             {
-                Medicines = medicines;
+                Medicines = medicines.Data;
             }
             return Page();
         }

@@ -12,9 +12,13 @@ namespace WEB253504Klebeko.API.Services.MedicineService
         private readonly AppDbContext _context;
         private readonly string _imagePath;
 
-        public MedicineService(AppDbContext context)
+        private readonly ILogger _logger;
+
+
+        public MedicineService(AppDbContext context, ILogger<MedicineService> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
 
@@ -23,12 +27,16 @@ namespace WEB253504Klebeko.API.Services.MedicineService
             if (pageSize > _maxPageSize)
                 pageSize = _maxPageSize;
 
-            var query = _context.Medicines.AsQueryable();
+            var query = _context.Medicines
+                .Include(m => m.Category) // Подгружаем связанные категории
+                .AsQueryable();
+
             var dataList = new ListModel<Medicines>();
 
             if (!string.IsNullOrEmpty(categoryNormalizedName))
             {
-                query = query.Where(d => d.Category.ToLower() == categoryNormalizedName.ToLower());
+                // Фильтруем по нормализованному имени категории
+                query = query.Where(d => d.Category.NormalizedName.ToLower() == categoryNormalizedName.ToLower());
             }
 
             var count = await query.CountAsync();
@@ -42,6 +50,7 @@ namespace WEB253504Klebeko.API.Services.MedicineService
             if (pageNo > totalPages)
                 return ResponseData<ListModel<Medicines>>.Error("No such page");
 
+            // Получаем список медикаментов с учетом фильтров и пагинации
             dataList.Items = await query
                 .OrderBy(d => d.Id)
                 .Skip((pageNo - 1) * pageSize)
@@ -57,10 +66,30 @@ namespace WEB253504Klebeko.API.Services.MedicineService
 
         public async Task<ResponseData<Medicines>> CreateMedicAsync(Medicines medicine)
         {
+            // Убедитесь, что Id не установлен вручную (если он генерируется автоматически)
+            medicine.Id = 0; // Сбрасываем Id, если необходимо
+
+            _logger.LogInformation($"Создание медикамента: {medicine.Name}, CategoryId: {medicine.CategoryId}");
+
+            // Добавляем медикамент в контекст
             _context.Medicines.Add(medicine);
-            await _context.SaveChangesAsync();
+
+            try
+            {
+
+                // Сохраняем изменения в базе данных
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, "Ошибка при сохранении данных.");
+                return ResponseData<Medicines>.Error("Ошибка при сохранении данных.");
+            }
+
+            // Возвращаем успешный ответ с созданным медикаментом
             return ResponseData<Medicines>.Success(medicine);
         }
+
 
         public async Task DeleteMedicAsync(int id)
         {

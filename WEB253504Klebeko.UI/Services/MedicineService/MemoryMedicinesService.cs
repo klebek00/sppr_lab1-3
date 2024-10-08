@@ -33,7 +33,7 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         }
 
 
-        public async Task<ResponseData<ListModel<Medicines>>> GetMedicListAsync(string? categoryNormalizedName, int pageNo = 1)
+        public async Task<ResponseData<ListModel<Medicines>>> GetMedicListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = -1)
         {
             int itemsPerPage = _configuration.GetValue<int>("ItemsPerPage");
 

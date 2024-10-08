@@ -21,5 +21,11 @@ namespace WEB253504Klebeko.API.Services.CategoryService
             var result = ResponseData<List<Category>>.Success(category);
             return Task.FromResult(result);
         }
+        public async Task<ResponseData<Category>> GetCategoryByIdAsync(int categoryId)
+        {
+            var category = await _context.Categories.FindAsync(categoryId);
+            return ResponseData<Category>.Success(category);
+        }
+
     }
 }

@@ -109,6 +109,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WEB253504Klebeko.API.Controllers.FilesController",
+    "Method": "SaveFile",
+    "RelativePath": "api/Files",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WEB253504Klebeko.API.Controllers.FilesController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/Files",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WEB253504Klebeko.API.Controllers.MedicinesController",
     "Method": "GetMedicines",
     "RelativePath": "api/Medicines",

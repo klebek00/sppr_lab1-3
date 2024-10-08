@@ -39,14 +39,14 @@ namespace WEB253504Klebeko.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            var category = await _categoryService.GetCategoryByIdAsync(id);
 
             if (category == null)
             {
                 return NotFound();
             }
 
-            return category;
+            return Ok(category);
         }
 
         // PUT: api/Categories/5

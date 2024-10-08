@@ -8,20 +8,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WEB253504Klebeko.API.Data;
 using WEB253504Klebeko.Domain.Entities;
+using WEB253504Klebeko.UI.Services.MedicineService;
 
 namespace WEB253504Klebeko.UI.Areas.Admin.Pages
 {
     public class EditModel : PageModel
     {
-        private readonly WEB253504Klebeko.API.Data.AppDbContext _context;
+        private readonly IMedicineService _mediicineService;
 
-        public EditModel(WEB253504Klebeko.API.Data.AppDbContext context)
+        public EditModel(IMedicineService medicineService)
         {
-            _context = context;
+            _mediicineService = medicineService;
         }
 
         [BindProperty]
         public Medicines Medicines { get; set; } = default!;
+
+        [BindProperty]
+        public IFormFile? Image { get; set; }
+
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,12 +36,12 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
                 return NotFound();
             }
 
-            var medicines =  await _context.Medicines.FirstOrDefaultAsync(m => m.Id == id);
+            var medicines =  await _mediicineService.GetMedicByIdAsync((int)id);
             if (medicines == null)
             {
                 return NotFound();
             }
-            Medicines = medicines;
+            Medicines = medicines.Data;
             return Page();
         }
 
@@ -48,30 +54,10 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
                 return Page();
             }
 
-            _context.Attach(Medicines).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MedicinesExists(Medicines.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _mediicineService.UpdateMedicAsync(Medicines.Id, Medicines, Image);
 
             return RedirectToPage("./Index");
         }
 
-        private bool MedicinesExists(int id)
-        {
-            return _context.Medicines.Any(e => e.Id == id);
-        }
     }
 }

@@ -39,5 +39,33 @@ namespace WEB253504Klebeko.UI.Services.CategoryService
             var beerList = await response.Content.ReadFromJsonAsync<ResponseData<List<Category>>>(_serializerOptions);
             return beerList!;
         }
+
+        public async Task<ResponseData<Category>> GetCategoryByIdAsync(int categoryId)
+        {
+            var urlString = new StringBuilder($"{_httpClient.BaseAddress!.AbsoluteUri}Categories/{categoryId}");
+            _logger.LogInformation("Requesting URL: {url}", urlString.ToString());
+
+            var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorMessage = $"Object not received. Error {response.StatusCode}";
+                var responseContent = await response.Content.ReadAsStringAsync();
+                _logger.LogError("{ErrorMessage}. Response content: {Content}", errorMessage, responseContent);
+
+                return ResponseData<Category>.Error("Category not found");
+            }
+
+            var categoryResponse = await response.Content.ReadFromJsonAsync<ResponseData<Category>>(_serializerOptions);
+            if (categoryResponse == null)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                _logger.LogError("Deserialization returned null for response: {ResponseContent}", responseContent);
+                return ResponseData<Category>.Error("Failed to deserialize category.");
+            }
+
+            return categoryResponse;
+        }
+
     }
 }

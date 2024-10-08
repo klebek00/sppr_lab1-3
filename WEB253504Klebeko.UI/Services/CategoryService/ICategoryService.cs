@@ -6,5 +6,7 @@ namespace WEB253504Klebeko.UI.Services.CategoryService
 	public interface ICategoryService
 	{
 		public Task<ResponseData<List<Category>>> GetCategoryListAsync();
-	}
+        public Task<ResponseData<Category>> GetCategoryByIdAsync(int categoryId);
+
+    }
 }

@@ -10,8 +10,8 @@ using WEB253504Klebeko.API.Data;
 namespace WEB253504Klebeko.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240929113428_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241007225617_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,10 +44,6 @@ namespace WEB253504Klebeko.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
@@ -72,7 +68,20 @@ namespace WEB253504Klebeko.API.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Medicines");
+                });
+
+            modelBuilder.Entity("WEB253504Klebeko.Domain.Entities.Medicines", b =>
+                {
+                    b.HasOne("WEB253504Klebeko.Domain.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

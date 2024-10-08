@@ -19,79 +19,80 @@ namespace WEB253504Klebeko.API.Data
             var baseUrl = app.Configuration["ApiBaseUrl"];
 
 
-            if (context.Medicines.Any() && context.Categories.Any())
+            if (!context.Categories.Any())
             {
-                return;
+                var categories = new List<Category>
+                {
+                    new Category { Name = "Жаропонижающие", NormalizedName = "antipyretic" },
+                    new Category { Name = "Антибиотики", NormalizedName = "antibiotics" },
+                    new Category { Name = "Капли", NormalizedName = "drops" },
+                    new Category { Name = "Антигистаминные", NormalizedName = "antihistamines" },
+                    new Category { Name = "Сиропы", NormalizedName = "syrups" }
+                };
+
+                await context.Categories.AddRangeAsync(categories);
+                await context.SaveChangesAsync();
+            }
+            if (!context.Medicines.Any())
+            {
+                var categories = await context.Categories.ToListAsync();
+
+                var medicines = new[]
+                {
+                    new Medicines
+                    {
+                        Name = "Эффералган",
+                        Description = "Жаропонижающее средство.",
+                        CategoryId = categories.First(c => c.NormalizedName == "antipyretic").Id,
+                        Price = 15,
+                        Image = $"{baseUrl}/Images/12.jpg",
+                        Mime = "image/jpeg"
+                    },
+                    new Medicines
+                    {
+                        Name = "Доксициклин",
+                        Description = "Антибиотик широкого спектра действия.",
+                        CategoryId = categories.First(c => c.NormalizedName == "antibiotics").Id,
+                        Price = 3,
+                        Image = $"{baseUrl}/Images/22.jpg",
+                        Mime = "image/jpeg"
+
+                    },
+                    new Medicines
+                    {
+                        Name = "Нафазолин",
+                        Description = "Назальные капли.",
+                        CategoryId = categories.First(c => c.NormalizedName == "drops").Id,
+                        Price = 1,
+                        Image = $"{baseUrl}/Images/32.jpg",
+                        Mime = "image/jpeg"
+                    },
+                    new Medicines
+                    {
+                        Name = "Фенкарол",
+                        Description = "Антигистаминное средство.",
+                        CategoryId = categories.First(c => c.NormalizedName == "antihistamines").Id,
+                        Price = 16,
+                        Image = $"{baseUrl}/Images/42.jpg",
+                        Mime = "image/jpeg"
+                    },
+                    new Medicines
+                    {
+                        Name = "Доктор Мом",
+                        Description = "Сироп от кашля.",
+                        CategoryId = categories.First(c => c.NormalizedName == "syrups").Id,
+                        Price = 10,
+                        Image = $"{baseUrl}/Images/52.jpg",
+                        Mime = "image/jpeg"
+                    }
+                    };
+
+                    await context.Medicines.AddRangeAsync(medicines);
+                    await context.SaveChangesAsync();
             }
 
-            var antipyretic = new Category { Name = "Жаропонижающие", NormalizedName = "antipyretic" };
-            var antibiotics = new Category { Name = "Антибиотики", NormalizedName = "antibiotics" };
-            var drops = new Category { Name = "Капли", NormalizedName = "drops" };
-            var antihistamines = new Category { Name = "Антигистаминные", NormalizedName = "antihistamines" };
-            var syrups = new Category { Name = "Сиропы", NormalizedName = "syrups" };
 
-            var categories = new List<Category>() { antipyretic, antibiotics, drops, antihistamines, syrups };
 
-            await context.Categories.AddRangeAsync(categories);
-            await context.SaveChangesAsync();
-
-            var medicines = new[]
-            {
-                new Medicines
-                {
-                    Name = "Эффералган",
-                    Description = "Жаропонижающее средство.",
-                    CategoryId = antipyretic.Id,
-                    Price = 15,
-                    Image = $"{baseUrl}/Images/12.jpg",
-                    Category = antipyretic.NormalizedName,
-                    Mime = "image/jpeg" 
-                },
-                new Medicines 
-                { 
-                    Name = "Доксициклин", 
-                    Description = "Антибиотик широкого спектра действия.", 
-                    CategoryId = antibiotics.Id,
-                    Category = antibiotics.NormalizedName,
-                    Price = 3, 
-                    Image = $"{baseUrl}/Images/22.jpg", 
-                    Mime = "image/jpeg" 
-                    
-                },
-                new Medicines 
-                { 
-                    Name = "Нафазолин", 
-                    Description = "Назальные капли.", 
-                    CategoryId = drops.Id, 
-                    Category = drops.NormalizedName,
-                    Price = 1, 
-                    Image = $"{baseUrl}/Images/32.jpg", 
-                    Mime = "image/jpeg" 
-                },
-                new Medicines 
-                { 
-                    Name = "Фенкарол", 
-                    Description = "Антигистаминное средство.", 
-                    CategoryId = antihistamines.Id, 
-                    Category = antihistamines.NormalizedName,
-                    Price = 16, 
-                    Image = $"{baseUrl}/Images/42.jpg", 
-                    Mime = "image/jpeg" 
-                },
-                new Medicines 
-                { 
-                    Name = "Доктор Мом", 
-                    Description = "Сироп от кашля.", 
-                    CategoryId = syrups.Id, 
-                    Category = syrups.NormalizedName,
-                    Price = 10, 
-                    Image = $"{baseUrl}/Images/52.jpg", 
-                    Mime = "image/jpeg" 
-                }
-            };
-
-            await context.Medicines.AddRangeAsync(medicines);
-            await context.SaveChangesAsync();
         }
     
     }

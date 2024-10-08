@@ -8,7 +8,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -20,20 +20,14 @@
                 @Html.DisplayNameFor(model => model.Medicines[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Medicines[0].CategoryId)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Medicines[0].Price)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Medicines[0].Image)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Medicines[0].Mime)
-            </th>
-            <th>
+           @*  <th>
                 @Html.DisplayNameFor(model => model.Medicines[0].Category)
-            </th>
+            </th> *@
             <th></th>
         </tr>
     </thead>
@@ -47,26 +41,21 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Image)
+                <img src="@item.Image" class="card-img-top" style="object-fit: contain; height: 150px;" alt="beer">
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mime)
-            </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.Category)
-            </td>
+            </td> *@
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                 <a class="btn btn-success" asp-page="./Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i> Edit</a> |
+                 <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i> Details</a> |
+                 <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i> Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+

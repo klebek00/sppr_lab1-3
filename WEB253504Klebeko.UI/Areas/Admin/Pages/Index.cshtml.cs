@@ -7,23 +7,26 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WEB253504Klebeko.API.Data;
 using WEB253504Klebeko.Domain.Entities;
+using WEB253504Klebeko.UI.Services.MedicineService;
 
 namespace WEB253504Klebeko.UI.Areas.Admin.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly WEB253504Klebeko.API.Data.AppDbContext _context;
+        private readonly IMedicineService _mediicineService;
 
-        public IndexModel(WEB253504Klebeko.API.Data.AppDbContext context)
+        public IndexModel(IMedicineService medicineService)
         {
-            _context = context;
+            _mediicineService = medicineService;
         }
 
         public IList<Medicines> Medicines { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Medicines = await _context.Medicines.ToListAsync();
+            var medicines = await _mediicineService.GetMedicListAsync(pageSize: 1000);
+            Medicines = medicines.Data.Items;
+
         }
     }
 }

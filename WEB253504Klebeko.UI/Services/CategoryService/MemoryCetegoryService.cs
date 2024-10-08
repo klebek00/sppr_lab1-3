@@ -5,7 +5,12 @@ namespace WEB253504Klebeko.UI.Services.CategoryService
 {
 	public class MemoryCetegoryService : ICategoryService
 	{
-		public Task<ResponseData<List<Category>>> GetCategoryListAsync()
+        public Task<ResponseData<Category>> GetCategoryByIdAsync(int categoryId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ResponseData<List<Category>>> GetCategoryListAsync()
 		{
 			var categories = new List<Category>
 			{

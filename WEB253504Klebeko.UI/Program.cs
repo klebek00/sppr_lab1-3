@@ -9,9 +9,6 @@ using WEB253504Klebeko.UI.Services.CategoryService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connectionDBString = builder.Configuration.GetConnectionString("Default");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionDBString));
-
 
 // Add services to the container.
 
@@ -26,7 +23,7 @@ builder.Services
 builder.Services
 .AddHttpClient<WEB253504Klebeko.UI.Services.CategoryService.ICategoryService, ApiCategoryService>(opt => opt.BaseAddress = new Uri(uriData.ApiUri));
 
-
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
