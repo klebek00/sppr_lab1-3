@@ -36,7 +36,7 @@ namespace WEB253504Klebeko.API.Controllers
             return Ok(fileUrl);
         }
 
-        [HttpDelete]
+        [HttpDelete("{fileName}")]
         public IActionResult DeleteFile(string fileName)
         {
             var filePath = Path.Combine(_imagePath, fileName);
@@ -58,6 +58,7 @@ namespace WEB253504Klebeko.API.Controllers
                 return StatusCode(500, new { message = $"Ошибка при удалении файла: {ex.Message}" });
             }
         }
+
 
 
     }

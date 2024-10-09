@@ -66,17 +66,23 @@ namespace WEB253504Klebeko.API.Services.MedicineService
 
         public async Task<ResponseData<Medicines>> CreateMedicAsync(Medicines medicine)
         {
-            // Убедитесь, что Id не установлен вручную (если он генерируется автоматически)
+            // Убедитесь, что Id медикамента не установлен вручную (если он генерируется автоматически)
             medicine.Id = 0; // Сбрасываем Id, если необходимо
 
             _logger.LogInformation($"Создание медикамента: {medicine.Name}, CategoryId: {medicine.CategoryId}");
+
+            // Убедитесь, что категория не создается заново, если она уже существует
+            if (medicine.Category != null)
+            {
+                // Присоединяем категорию к контексту, чтобы EF не пытался добавить её как новую
+                _context.Categories.Attach(medicine.Category);
+            }
 
             // Добавляем медикамент в контекст
             _context.Medicines.Add(medicine);
 
             try
             {
-
                 // Сохраняем изменения в базе данных
                 await _context.SaveChangesAsync();
             }
@@ -89,6 +95,7 @@ namespace WEB253504Klebeko.API.Services.MedicineService
             // Возвращаем успешный ответ с созданным медикаментом
             return ResponseData<Medicines>.Success(medicine);
         }
+
 
 
         public async Task DeleteMedicAsync(int id)
@@ -117,6 +124,7 @@ namespace WEB253504Klebeko.API.Services.MedicineService
             medToUpdate.Description = med.Description;
             medToUpdate.Name = med.Name;
             medToUpdate.CategoryId = med.CategoryId;
+            medToUpdate.Image = med.Image;
 
             _context.Update(medToUpdate);
             await _context.SaveChangesAsync();

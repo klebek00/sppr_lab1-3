@@ -85,7 +85,7 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
 
         public async Task DeleteMedicAsync(int id)
         {
-            var uri = new UriBuilder(_httpClient.BaseAddress!.AbsoluteUri, $"medicine/{id}").Uri;
+            var uri = new Uri($"{_httpClient.BaseAddress!.AbsoluteUri}medicines/{id}");
 
             var response = await _httpClient.DeleteAsync(uri);
             if (!response.IsSuccessStatusCode)
@@ -151,8 +151,9 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
                 if (!string.IsNullOrEmpty(imageUrl))
                     product.Image = imageUrl;
             }
+            var uri = new Uri($"{_httpClient.BaseAddress!.AbsoluteUri}medicines/{id}");
 
-            var uri = new UriBuilder(_httpClient.BaseAddress!.ToString(), "medicines").Uri;
+            //var uri = new UriBuilder(_httpClient.BaseAddress!.ToString(), "medicines").Uri;
 
             var response = await _httpClient.PutAsJsonAsync(uri, product, _serializerOptions);
 

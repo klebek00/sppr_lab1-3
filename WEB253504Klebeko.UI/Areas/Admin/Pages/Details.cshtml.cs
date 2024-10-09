@@ -7,19 +7,23 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WEB253504Klebeko.API.Data;
 using WEB253504Klebeko.Domain.Entities;
+using WEB253504Klebeko.UI.Services.FileService;
 using WEB253504Klebeko.UI.Services.MedicineService;
 
 namespace WEB253504Klebeko.UI.Areas.Admin.Pages
 {
     public class DetailsModel : PageModel
     {
-        private readonly IMedicineService _mediicineService;
+        private readonly IMedicineService _medicineService;
+        private readonly IFileService _fileService;
 
-        public DetailsModel(IMedicineService medicineService)
+        public DetailsModel(IMedicineService medicineService, IFileService fileService)
         {
-            _mediicineService = medicineService;
+            _medicineService = medicineService;
+            _fileService = fileService;
         }
 
+        [BindProperty]
         public Medicines Medicines { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -29,16 +33,27 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
                 return NotFound();
             }
 
-            var medicines = await _mediicineService.GetMedicByIdAsync((int)id);
-            if (medicines == null)
+            var medicine = await _medicineService.GetMedicByIdAsync((int)id);
+            if (medicine == null)
             {
                 return NotFound();
             }
-            else
-            {
-                Medicines = medicines.Data;
-            }
+
+            Medicines = medicine.Data;
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            _medicineService.DeleteMedicAsync(id);
+            await _fileService.DeleteFileAsync(Medicines.Image);
+
+            return RedirectToPage("./Index");
         }
     }
 }

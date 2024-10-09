@@ -11,6 +11,9 @@
     <h4>Medicines</h4>
     <hr />
     <dl class="row">
+        <dt>
+            <img src="@Model.Medicines.Image" class="card-img-top" style="object-fit: contain; height: 250px;" alt="med">
+        </dt>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Medicines.Name)
         </dt>
@@ -30,16 +33,10 @@
             @Html.DisplayFor(model => model.Medicines.Price)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Medicines.Image)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Medicines.Image)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Medicines.Category)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Medicines.Category)
+            @Html.DisplayFor(model => model.Medicines.Category.Name)
         </dd>
     </dl>
 </div>

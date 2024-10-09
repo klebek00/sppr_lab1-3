@@ -36,8 +36,8 @@ namespace WEB253504Klebeko.UI.Services.CategoryService
                 return ResponseData<List<Category>>.Error("Category not found");
             }
 
-            var beerList = await response.Content.ReadFromJsonAsync<ResponseData<List<Category>>>(_serializerOptions);
-            return beerList!;
+            var list = await response.Content.ReadFromJsonAsync<ResponseData<List<Category>>>(_serializerOptions);
+            return list!;
         }
 
         public async Task<ResponseData<Category>> GetCategoryByIdAsync(int categoryId)

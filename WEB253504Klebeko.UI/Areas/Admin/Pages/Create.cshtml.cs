@@ -73,22 +73,15 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
             }
 
             //// Присваиваем категорию медикаменту
-            //Medicines.Category = categoryResponse.Data;
+            Medicines.Category = categoryResponse.Data;
 
             // Если было загружено изображение
             if (Image != null)
             {
                 try
                 {
-                    // Сохраняем файл через API
-                    var imageUrl = await _fileService.SaveFileAsync(Image); // Вызов метода SaveFileAsync
-                    if (string.IsNullOrEmpty(imageUrl))
-                    {
-                        ModelState.AddModelError(string.Empty, "Error uploading image.");
-                        return Page();
-                    }
 
-                    Medicines.Image = imageUrl; // Сохраняем URL изображения
+                    Medicines.Image = Image.FileName; // Сохраняем URL изображения
                     Medicines.Mime = Image.ContentType; // Сохраняем Mime тип
                 }
                 catch (Exception ex)

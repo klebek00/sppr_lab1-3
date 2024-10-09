@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n/uKmb46mUEJJ7IImCfuCr9sbj3yVbW8s+JBqL8o0RQ=",
+  "Hash": "8Taym84CBc4ZSPy/SI+qVr2cIwLf6nKCTwAJpjtdW0Y=",
   "Source": "WEB253504Klebeko.UI",
   "BasePath": "_content/WEB253504Klebeko.UI",
   "Mode": "Default",
@@ -1252,25 +1252,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\42.jpg"
     },
     {
-      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\44dzzesk.png",
-      "SourceId": "WEB253504Klebeko.API",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\",
-      "BasePath": "_content/WEB253504Klebeko.API",
-      "RelativePath": "Images/44dzzesk.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\44dzzesk.png"
-    },
-    {
       "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\52.jpg",
       "SourceId": "WEB253504Klebeko.API",
       "SourceType": "Project",
@@ -1309,12 +1290,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\default-profile-picture.png"
     },
     {
-      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\egymjjfp.png",
+      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\ik5jq52s.jpg",
       "SourceId": "WEB253504Klebeko.API",
       "SourceType": "Project",
       "ContentRoot": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\",
       "BasePath": "_content/WEB253504Klebeko.API",
-      "RelativePath": "Images/egymjjfp.png",
+      "RelativePath": "Images/ik5jq52s.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1325,15 +1306,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\egymjjfp.png"
+      "OriginalItemSpec": "wwwroot\\Images\\ik5jq52s.jpg"
     },
     {
-      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\if52p43w.png",
+      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\nylhve13.jpg",
       "SourceId": "WEB253504Klebeko.API",
       "SourceType": "Project",
       "ContentRoot": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\",
       "BasePath": "_content/WEB253504Klebeko.API",
-      "RelativePath": "Images/if52p43w.png",
+      "RelativePath": "Images/nylhve13.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1344,15 +1325,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\if52p43w.png"
+      "OriginalItemSpec": "wwwroot\\Images\\nylhve13.jpg"
     },
     {
-      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\qsfquh2a.png",
+      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\ybaz0brh.png",
       "SourceId": "WEB253504Klebeko.API",
       "SourceType": "Project",
       "ContentRoot": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\",
       "BasePath": "_content/WEB253504Klebeko.API",
-      "RelativePath": "Images/qsfquh2a.png",
+      "RelativePath": "Images/ybaz0brh.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1363,45 +1344,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\qsfquh2a.png"
-    },
-    {
-      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\shpc21ng.png",
-      "SourceId": "WEB253504Klebeko.API",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\",
-      "BasePath": "_content/WEB253504Klebeko.API",
-      "RelativePath": "Images/shpc21ng.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\shpc21ng.png"
-    },
-    {
-      "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\usxunjzk.png",
-      "SourceId": "WEB253504Klebeko.API",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\",
-      "BasePath": "_content/WEB253504Klebeko.API",
-      "RelativePath": "Images/usxunjzk.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\usxunjzk.png"
+      "OriginalItemSpec": "wwwroot\\Images\\ybaz0brh.png"
     },
     {
       "Identity": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.UI\\wwwroot\\css\\site.css",

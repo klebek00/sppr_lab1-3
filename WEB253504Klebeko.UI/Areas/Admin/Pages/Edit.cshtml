@@ -31,16 +31,17 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="Medicines.Category" class="control-label"></label>
-                <input asp-for="Medicines.Category.Name" class="form-control" />
-                <span asp-validation-for="Medicines.Category" class="text-danger"></span>
+                <label asp-for="Medicines.CategoryId" class="control-label"></label>
+                <!-- Выпадающее меню для выбора категории -->
+                <select asp-for="Medicines.CategoryId" class="form-control" asp-items="Model.Categories"></select>
+                <span asp-validation-for="Medicines.CategoryId" class="text-danger"></span>
             </div>
-            <!-- Поле для загрузки файла -->
             <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
+                <label asp-for="Image" class="control-label"></label> 
                 <input type="file" asp-for="Image" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

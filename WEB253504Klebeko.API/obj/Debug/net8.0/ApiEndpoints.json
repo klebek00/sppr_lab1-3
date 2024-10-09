@@ -127,7 +127,7 @@
   {
     "ContainingType": "WEB253504Klebeko.API.Controllers.FilesController",
     "Method": "DeleteFile",
-    "RelativePath": "api/Files",
+    "RelativePath": "api/Files/{fileName}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -135,7 +135,7 @@
       {
         "Name": "fileName",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
