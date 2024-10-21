@@ -13,5 +13,6 @@ namespace WEB253504Klebeko.API.Data
 
         public DbSet<Medicines> Medicines { get; set; }
         public DbSet<Category> Categories { get; set; }
+
     }
 }

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WEB253504Klebeko.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+552552cc4f3a331edcaf8e14ccc05fbba3cb5776")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8483cfdc34f79ee1722e55c12f6b4613854bec8")]
 [assembly: System.Reflection.AssemblyProductAttribute("WEB253504Klebeko.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WEB253504Klebeko.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

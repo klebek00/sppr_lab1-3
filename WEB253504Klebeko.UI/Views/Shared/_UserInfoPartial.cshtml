@@ -1,36 +1,50 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@await Component.InvokeAsync("CartSummary")
 
-@await Component.InvokeAsync("CartSummary")
+@{
+    string name = "User";
+    string avatar = "/images/default-profile-picture.png";
 
-<div class="dropdown ms-4 nav-color">
-    <button class="btn btn-secondary dropdown-toggle"
-            type="button" id="dropdownMenuButton"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
-        User@gmail.com
-        <img src="images/default-profile-picture.png" width="30"
-             alt="User" class="rounded nav-color" />
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li>
-            <span class="dropdown-item-text">
-                <img src="/images/default-profile-picture.png"
-                     width="50" alt="User" class="rounded" />
-                user@gmail.com
-            </span>
-        </li>
-        <li><hr class="dropdown-divider"></li>
-        <li>
-            @* <form id="logoutForm" class="form-inline" method="post">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-            </form> *@
-            <form asp-controller="Account" asp-action="LogOut" id="logoutForm" class="form-inline">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-            </form>
+    if (User.Identity.IsAuthenticated)
+    {
+        name = User.Claims
+            .FirstOrDefault(c => c.Type.Equals("preferred_username", StringComparison.OrdinalIgnoreCase))?.Value ?? "User";
+        avatar = User.Claims
+            .FirstOrDefault(c => c.Type.Equals("avatar", StringComparison.OrdinalIgnoreCase))?.Value ?? "/images/default-profile-picture.png";
+    }
+}
 
-        </li>
-    </ul>
-</div> 
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="dropdown ms-4 nav-color">
+        <button class="btn btn-secondary dropdown-toggle"
+                type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+            @name
+            <img src="@avatar" width="30"
+                 alt="@name" class="rounded nav-color" />
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li>
+                <span class="dropdown-item-text">
+                    <img src="@avatar"
+                         width="50" alt="@name" class="rounded" />
+                    @name
+                </span>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="form-inline">
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+}
+else
+{
+    <div class="ms-4">
+        <a asp-controller="Account" asp-action="Login" class="btn btn-link text-light">Login</a>
+        <a asp-controller="Account" asp-action="Register" class="btn btn-link text-light">Register</a>
+    </div>
+}

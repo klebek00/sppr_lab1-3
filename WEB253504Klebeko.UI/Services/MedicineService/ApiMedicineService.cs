@@ -4,6 +4,7 @@ using System.Text.Json;
 using WEB253504Klebeko.Domain.Entities;
 using WEB253504Klebeko.Domain.Models;
 using WEB253504Klebeko.UI.Services.FileService;
+using WEB253504Klebeko.UI.Services.Authentication;
 
 namespace WEB253504Klebeko.UI.Services.MedicineService
 {
@@ -17,7 +18,9 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         string _pageSize;
         private readonly IFileService _fileService;
 
-        public ApiMedicineService(HttpClient httpClient, IConfiguration configuration, ILogger<ApiMedicineService> logger, IFileService fileService)
+        ITokenAccessor _tokenAccessor;
+
+        public ApiMedicineService(HttpClient httpClient, IConfiguration configuration, ILogger<ApiMedicineService> logger, IFileService fileService, ITokenAccessor tokenAccessor)
         {
             _httpClient = httpClient;
             _fileService = fileService;
@@ -27,6 +30,7 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             };
             _logger = logger;
+            _tokenAccessor = tokenAccessor;
         }
         public async Task<ResponseData<Medicines>> CreateMedicAsync(Medicines product, IFormFile? formFile)
         {
@@ -47,6 +51,8 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
 
             try
             {
+                _tokenAccessor.SetAuthorizationHeaderAsync(_httpClient);
+
                 var response = await _httpClient.PostAsJsonAsync(uri, product, _serializerOptions);
 
                 // Логируем полученный статус и контент
@@ -87,6 +93,8 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         {
             var uri = new Uri($"{_httpClient.BaseAddress!.AbsoluteUri}medicines/{id}");
 
+            _tokenAccessor.SetAuthorizationHeaderAsync(_httpClient);
+
             var response = await _httpClient.DeleteAsync(uri);
             if (!response.IsSuccessStatusCode)
             {
@@ -94,8 +102,6 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
                 _logger.LogError(errorMessage);
             }
         }
-
-
         public async Task<ResponseData<ListModel<Medicines>>> GetMedicListAsync(string? categoryNormalizedName, int pageNo = 1, int pageSize = -1)
         {
             pageSize = pageSize == -1 ? 3 : pageSize;
@@ -121,6 +127,8 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
 
             Console.WriteLine($"Requesting URL: {urlString}");
 
+            _tokenAccessor.SetAuthorizationHeaderAsync(_httpClient);
+
             var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
 
             if (response.IsSuccessStatusCode)
@@ -139,9 +147,6 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
             _logger.LogError($"-----> Данные не получены от сервера. Error: {response.StatusCode}");
             return ResponseData<ListModel<Medicines>>.Error($"Данные не получены от сервера. Error: {response.StatusCode}");
         }
-
-
-
         public async Task UpdateMedicAsync(int id, Medicines product, IFormFile? formFile)
         {
             if (formFile != null)
@@ -153,7 +158,7 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
             }
             var uri = new Uri($"{_httpClient.BaseAddress!.AbsoluteUri}medicines/{id}");
 
-            //var uri = new UriBuilder(_httpClient.BaseAddress!.ToString(), "medicines").Uri;
+            _tokenAccessor.SetAuthorizationHeaderAsync(_httpClient);
 
             var response = await _httpClient.PutAsJsonAsync(uri, product, _serializerOptions);
 
@@ -167,6 +172,8 @@ namespace WEB253504Klebeko.UI.Services.MedicineService
         public async Task<ResponseData<Medicines>> GetMedicByIdAsync(int id)
         {
             var uri = new Uri($"{_httpClient.BaseAddress!.AbsoluteUri}medicines/{id}");
+
+            _tokenAccessor.SetAuthorizationHeaderAsync(_httpClient);
 
             var response = await _httpClient.GetAsync(uri);
 

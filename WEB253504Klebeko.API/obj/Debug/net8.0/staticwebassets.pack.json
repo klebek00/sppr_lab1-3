@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\10pbcivw.jpg",
+      "PackagePath": "staticwebassets\\Images\\10pbcivw.jpg"
+    },
+    {
       "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\12.jpg",
       "PackagePath": "staticwebassets\\Images\\12.jpg"
     },
@@ -21,16 +25,44 @@
       "PackagePath": "staticwebassets\\Images\\52.jpg"
     },
     {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\b1odr1c4.png",
+      "PackagePath": "staticwebassets\\Images\\b1odr1c4.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\bjzl5ekx.jpg",
+      "PackagePath": "staticwebassets\\Images\\bjzl5ekx.jpg"
+    },
+    {
       "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\default-profile-picture.png",
       "PackagePath": "staticwebassets\\Images\\default-profile-picture.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\gx4af5q1.jpg",
+      "PackagePath": "staticwebassets\\Images\\gx4af5q1.jpg"
     },
     {
       "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\ik5jq52s.jpg",
       "PackagePath": "staticwebassets\\Images\\ik5jq52s.jpg"
     },
     {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\jlxhfh0n.png",
+      "PackagePath": "staticwebassets\\Images\\jlxhfh0n.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\khtcjsel.png",
+      "PackagePath": "staticwebassets\\Images\\khtcjsel.png"
+    },
+    {
       "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\nylhve13.jpg",
       "PackagePath": "staticwebassets\\Images\\nylhve13.jpg"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\sevuwdul.jpg",
+      "PackagePath": "staticwebassets\\Images\\sevuwdul.jpg"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\tmlb4q2y.png",
+      "PackagePath": "staticwebassets\\Images\\tmlb4q2y.png"
     },
     {
       "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.API\\wwwroot\\Images\\ybaz0brh.png",

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using WEB253504Klebeko.UI.Services.Authentication;
 
 namespace WEB253504Klebeko.UI.Services.FileService
 {
@@ -6,11 +7,13 @@ namespace WEB253504Klebeko.UI.Services.FileService
     {
         private readonly HttpClient _httpClient;
         private readonly HttpContext _httpContext;
+        private readonly ITokenAccessor _tokenAccessor;
 
-        public ApiFileService(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
+        public ApiFileService(HttpClient httpClient, IHttpContextAccessor httpContextAccessor, ITokenAccessor tokenAccessor)
         {
             _httpClient = httpClient;
             _httpContext = httpContextAccessor.HttpContext;
+            _tokenAccessor = tokenAccessor;
         }
         public async Task DeleteFileAsync(string file)
         {
@@ -18,12 +21,14 @@ namespace WEB253504Klebeko.UI.Services.FileService
             var fileName = Path.GetFileName(file);
             var requestUri = $"https://localhost:7002/api/files/{fileName}";
             Console.WriteLine($"Request URI: {requestUri}");
+
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Delete,
                 RequestUri = new Uri(requestUri)
             };
 
+            _tokenAccessor.SetAuthorizationHeaderAsync(_httpClient);
             // Отправить запрос на удаление файла
             var response = await _httpClient.SendAsync(request);
             if (!response.IsSuccessStatusCode)
@@ -49,6 +54,8 @@ namespace WEB253504Klebeko.UI.Services.FileService
             // Поместить контент в запрос
             request.Content = content;
             // Отправить запрос к API
+
+            _tokenAccessor.SetAuthorizationHeaderAsync(_httpClient);
             var response = await _httpClient.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {

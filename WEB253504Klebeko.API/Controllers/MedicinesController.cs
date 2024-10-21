@@ -10,9 +10,12 @@ using WEB253504Klebeko.Domain.Entities;
 using WEB253504Klebeko.Domain.Models;
 using WEB253504Klebeko.API.Services.MedicineService;
 using Azure;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace WEB253504Klebeko.API.Controllers
 {
+    //[Authorize(Policy = "admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class MedicinesController : ControllerBase
@@ -26,26 +29,9 @@ namespace WEB253504Klebeko.API.Controllers
             _medicineService = medicineService;
         }
 
-        //public async Task<ActionResult<IEnumerable<Medicines>>> GetMedicines()
-        //{
-        //    return await _context.Medicines.ToListAsync();
-        //}
-
-
-        // GET: api/Medicines
-        //[HttpGet("page{pageNo}")]
-        //[HttpGet("{categoryNormalizedName}")]
-        //[HttpGet]
-        //public async Task<ActionResult<ResponseData<List<Medicines>>>> GetMedicines(string? category,int pageNo = 1,int pageSize = 3)
-        //{
-        //    Console.WriteLine($"Category: {category}, Page No: {pageNo}, Page Size: {pageSize}");
-        //    return Ok(await _medicineService.GetMedicListAsync(
-        //    category,
-        //    pageNo,
-        //    pageSize));
-        //}
 
         [HttpGet("category/{categoryNormalizedName}")]
+        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<List<Medicines>>>> GetMedicinesByCategory(string categoryNormalizedName, [FromQuery] int pageNo = 1, [FromQuery] int pageSize = 3)
         {
             Console.WriteLine($"Category: {categoryNormalizedName}, Page No: {pageNo}, Page Size: {pageSize}");
@@ -54,6 +40,7 @@ namespace WEB253504Klebeko.API.Controllers
 
         [HttpGet("page{pageNo}")]
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<List<Medicines>>>> GetMedicines(string? category, int pageNo = 1, int pageSize = 3)
         {
             Console.WriteLine($"Category: {category}, Page No: {pageNo}, Page Size: {pageSize}");
@@ -66,8 +53,21 @@ namespace WEB253504Klebeko.API.Controllers
 
         // GET: api/Medicines/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<Medicines>>> GetMedicine(int id)
         {
+            var roles = User.Claims
+            .Where(c => c.Type == ClaimTypes.Role)
+            .Select(c => c.Value)
+            .ToList();
+            Console.WriteLine($"User Roles AAAAAAAAAAA: {string.Join(", ", roles)}");
+            var userClaims = User.Claims.ToList(); // Получаем все claims для отладки
+            Console.WriteLine("User Claims:");
+            foreach (var claim in userClaims)
+            {
+                Console.WriteLine($"{claim.Type}: {claim.Value}");
+            }
+
             var medResponse = await _medicineService.GetMedicByIdAsync(id);
             return Ok(medResponse);
         }
@@ -75,6 +75,7 @@ namespace WEB253504Klebeko.API.Controllers
         // PUT: api/Medicines/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Policy = "admin")]
         public async Task<IActionResult> PutMedicines(int id, Medicines medicines)
         {
             
@@ -85,8 +86,15 @@ namespace WEB253504Klebeko.API.Controllers
         // POST: api/Medicines
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Policy = "admin")]
         public async Task<ActionResult<ResponseData<Medicines>>> PostMedicines(Medicines medicines)
         {
+            var roles = User.Claims
+                .Where(c => c.Type == ClaimTypes.Role)
+                .Select(c => c.Value)
+                .ToList();
+            Console.WriteLine($"User Roles: {string.Join(", ", roles)}");
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState); // Вернуть 400, если модель не валидна
@@ -105,8 +113,17 @@ namespace WEB253504Klebeko.API.Controllers
 
         // DELETE: api/Medicines/5
         [HttpDelete("{id}")]
+        [Authorize(Policy = "admin")]
         public async Task<IActionResult> DeleteMedicines(int id)
         {
+            var roles = User.Claims
+            .Where(c => c.Type == ClaimTypes.Role)
+            .Select(c => c.Value)
+            .ToList();
+
+            Console.WriteLine($"User Roles: {string.Join(", ", roles)}");
+
+
             await _medicineService.DeleteMedicAsync(id);
             return NoContent();
         }
