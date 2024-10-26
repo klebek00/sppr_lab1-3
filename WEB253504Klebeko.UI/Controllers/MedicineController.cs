@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WEB253504Klebeko.Domain.Entities;
+using WEB253504Klebeko.UI.Extensions;
 using WEB253504Klebeko.UI.Services.CategoryService;
 using WEB253504Klebeko.UI.Services.MedicineService;
 
@@ -32,7 +33,10 @@ namespace WEB253504Klebeko.UI.Controllers
             ViewBag.CurrentCategory = currentCategory;
 
 
-
+            if (Request.IsAjaxRequest()) 
+            {
+                return PartialView("_MedicineListPartial", medicResponse.Data);
+            }
 
             return View(medicResponse.Data);
 		}

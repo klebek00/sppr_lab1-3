@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    $(document).on('click', '.page-link', function (event) {
+        event.preventDefault(); 
+        var url = $(this).attr('href'); 
 
-// Write your JavaScript code.
+        $.ajax({
+            url: url,
+            type: 'GET',
+            success: function (result) {
+                $('#medicines-container').html(result);
+            error: function (xhr, status, error) {
+                console.error("Ошибка при загрузке данных: ", error);
+            }
+        });
+    });
+});
