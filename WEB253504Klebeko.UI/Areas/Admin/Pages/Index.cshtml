@@ -1,11 +1,10 @@
 ﻿@page
 @model WEB253504Klebeko.UI.Areas.Admin.Pages.IndexModel
 
+
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
 
 <p>
     <a class="btn btn-primary" asp-page="Create">Create New</a>
@@ -14,16 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Medicines[0].Name)
+                @Html.DisplayNameFor(model => model.Medicines.Items[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Medicines[0].Description)
+                @Html.DisplayNameFor(model => model.Medicines.Items[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Medicines[0].Price)
+                @Html.DisplayNameFor(model => model.Medicines.Items[0].Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Medicines[0].Image)
+                @Html.DisplayNameFor(model => model.Medicines.Items[0].Image)
             </th>
            @*  <th>
                 @Html.DisplayNameFor(model => model.Medicines[0].Category)
@@ -32,7 +31,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Medicines) {
+@foreach (var item in Model.Medicines.Items) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -57,5 +56,9 @@
         </tr>
 }
     </tbody>
+
 </table>
 
+<Pager current-page="@Model.Medicines.CurrentPage"
+       total-pages="@Model.Medicines.TotalPages"
+       admin="true"></Pager>

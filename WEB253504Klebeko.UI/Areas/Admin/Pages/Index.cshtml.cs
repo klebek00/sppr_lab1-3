@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WEB253504Klebeko.API.Data;
 using WEB253504Klebeko.Domain.Entities;
+using WEB253504Klebeko.Domain.Models;
 using WEB253504Klebeko.UI.Services.MedicineService;
 
 namespace WEB253504Klebeko.UI.Areas.Admin.Pages
@@ -20,12 +21,11 @@ namespace WEB253504Klebeko.UI.Areas.Admin.Pages
             _mediicineService = medicineService;
         }
 
-        public IList<Medicines> Medicines { get;set; } = default!;
-
-        public async Task OnGetAsync()
+        public ListModel<Medicines> Medicines { get; set; } = default!;
+        public async Task OnGetAsync(int pageNo = 1)
         {
-            var medicines = await _mediicineService.GetMedicListAsync(pageSize: 1000);
-            Medicines = medicines.Data.Items;
+            var medicines = await _mediicineService.GetMedicListAsync(pageNo: pageNo, pageSize: 5);
+            Medicines = medicines.Data;
 
         }
     }
