@@ -82,19 +82,22 @@ namespace WEB253504Klebeko.UI.TagHelpers
 
         private string GenerateUrl(int pageNumber)
         {
-            // Получение HttpContext
             var httpContext = _httpContextAccessor.HttpContext;
-            // Условия для URL в зависимости от режима (admin или обычный)
+            
             if (IsAdmin)
             {
-                return $"/Admin/Index?pageNo={pageNumber}"; // Прямой URL
+                return $"/Admin/Index?pageNo={pageNumber}";
             }
             else
             {
-                return _linkGenerator.GetPathByPage(
+                var routeValues = new { category = Category, pageNo = pageNumber };
+
+                return _linkGenerator.GetPathByAction(
                     httpContext,
-                    "/Category/Index",
-                    values: new { pageNo = pageNumber, category = Category });
+                    action: "Index",
+                    controller: "Medicine",
+                    values: routeValues
+                );
             }
         }
     }

@@ -1,0 +1,57 @@
+﻿@using ﻿WEB253504Klebeko.Domain.Models
+@model WEB253504Klebeko.Domain.Models.Cart
+
+@{
+	var request = ViewContext.HttpContext.Request;
+	var returnUrl = request.Path + request.QueryString.ToUriComponent();
+}
+
+<div class="container overflow-hidden">
+    <h2>Your cart:</h2>
+    @if (Model.CartItems == null || !Model.CartItems.Any())
+    {
+        <p>Your cart is empty.</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CartItems.Values)
+                {
+                    <tr>
+                        <td>
+                            <img src="@item.Medicines.Image" alt="product image" style="width: 150px; height: 150px; object-fit: contain;">
+                        </td>
+                        <td>
+                            <h5 class="mb-1">@item.Medicines.Name</h5>
+                        </td>
+                        <td>
+                            <p class="mb-1">@item.Medicines.Description</p>                
+                        </td>
+                        <td>
+                            <p class="mb-1">@item.Amount</p>
+                        </td>
+                        <td>
+                            <a asp-controller="cart"
+                               asp-action="remove"
+                               asp-route-id="@item.Medicines.Id"
+                               asp-route-returnUrl="@returnUrl"
+                               class="btn btn-danger btn-sm">
+                                Remove <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

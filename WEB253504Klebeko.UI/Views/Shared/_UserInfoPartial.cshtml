@@ -1,6 +1,4 @@
-﻿@await Component.InvokeAsync("CartSummary")
-
-@{
+﻿@{
     string name = "User";
     string avatar = "/images/default-profile-picture.png";
 
@@ -15,6 +13,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
+    @await Component.InvokeAsync("CartSummary")
     <div class="dropdown ms-4 nav-color">
         <button class="btn btn-secondary dropdown-toggle"
                 type="button" id="dropdownMenuButton"

@@ -6,7 +6,8 @@ using WEB253504Klebeko.UI.Services.MedicineService;
 
 namespace WEB253504Klebeko.UI.Controllers
 {
-	public class MedicineController : Controller
+    [Route("Catalog")]
+    public class MedicineController : Controller
 	{
 		private readonly IMedicineService _medicineService;
 		private readonly ICategoryService _categoryService;
@@ -16,7 +17,10 @@ namespace WEB253504Klebeko.UI.Controllers
 			_medicineService = productService;
 			_categoryService = categoryService;
 		}
-		public async Task<IActionResult> Index(string? category, int pageNo = 1)
+        [HttpGet("")]
+        [HttpGet("{category}")]
+        [HttpGet("{category?}/Page_{pageNo:int}")]
+        public async Task<IActionResult> Index(string? category, int pageNo = 1)
 		{
 			var medicResponse = await _medicineService.GetMedicListAsync(category, pageNo);
 			if (!medicResponse.Successfull)

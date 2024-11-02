@@ -53,10 +53,12 @@ namespace WEB253504Klebeko.UI.Controllers
         [HttpPost]
         public async Task Logout()
         {
-            await
-            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme,
-            new AuthenticationProperties { RedirectUri = Url.Action("Index", "Home") });
+            HttpContext.Session.Remove("Cart");
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme, new AuthenticationProperties { RedirectUri = Url.Action("Index", "Home") });
         }
     }
 }

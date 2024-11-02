@@ -12,12 +12,16 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.Configuration;
 using WEB253504Klebeko.UI.HelperClasses;
 using WEB253504Klebeko.UI.Authorization;
+using WEB253504Klebeko.Domain.Models;
+using WEB253504Klebeko.UI.Services.CartService;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 builder.RegisterCustomServices();
 builder.Services.AddRazorPages();
@@ -31,6 +35,8 @@ builder.Services
 .AddHttpClient<WEB253504Klebeko.UI.Services.MedicineService.IMedicineService, ApiMedicineService>(opt => opt.BaseAddress = new Uri(uriData.ApiUri));
 builder.Services
 .AddHttpClient<WEB253504Klebeko.UI.Services.CategoryService.ICategoryService, ApiCategoryService>(opt => opt.BaseAddress = new Uri(uriData.ApiUri));
+
+builder.Services.AddScoped<Cart>();
 
 builder.Services.AddHttpContextAccessor();
 
@@ -59,6 +65,8 @@ builder.Services
     options.MetadataAddress = $"{keycloakData.Host}/realms/{keycloakData.Realm}/.well-known/openid-configuration";
 });
 
+builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
 
@@ -81,7 +89,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(

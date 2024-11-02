@@ -20,6 +20,9 @@
                     <div class="card-body">
                         <h5 class="card-title">@item.Name</h5>
                         <p class="card-text">@item.Description</p>
+                        <p class="card-text">
+                            <span class="price-highlight">@item.Price руб</span>
+                        </p>
                     </div>
                     <div class="card-footer d-flex justify-content-cen+ter">
                         <a href="@Url.Action("Add", "Cart", new { id = item.Id, returnurl = returnUrl })" class="btn btn-primary">
