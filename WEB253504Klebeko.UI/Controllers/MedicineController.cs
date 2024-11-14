@@ -30,8 +30,8 @@ namespace WEB253504Klebeko.UI.Controllers
             if (!categoriesResponse.Successfull)
                 return NotFound(categoriesResponse.ErrorMessage);
 
-            var currentCategory = categoriesResponse.Data
-        .FirstOrDefault(c => c.NormalizedName == category)?.Name ?? "Всe";
+            var currentCategory = categoriesResponse.Data?
+                            .FirstOrDefault(c => c.NormalizedName == category)?.Name ?? "Всe";
 
             ViewBag.Categories = categoriesResponse.Data;
             ViewBag.CurrentCategory = currentCategory;
@@ -42,6 +42,8 @@ namespace WEB253504Klebeko.UI.Controllers
                 return PartialView("_MedicineListPartial", medicResponse.Data);
             }
 
+            ViewData["categories"] = categoriesResponse.Data;
+            ViewData["currentCategory"] = currentCategory;
             return View(medicResponse.Data);
 		}
 	}

@@ -31,26 +31,23 @@ namespace WEB253504Klebeko.UI.TagHelpers
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            // Настройка основного контейнера
             output.TagName = "nav";
             output.Attributes.SetAttribute("aria-label", "Page navigation");
 
             var ulTag = new TagBuilder("ul");
             ulTag.AddCssClass("pagination");
 
-            // Добавление стрелки назад <
             var prevLiTag = new TagBuilder("li");
             prevLiTag.AddCssClass(CurrentPage == 1 ? "page-item disabled" : "page-item");
 
             var prevATag = new TagBuilder("a");
             prevATag.AddCssClass("page-link");
             prevATag.Attributes["href"] = GenerateUrl(CurrentPage > 1 ? CurrentPage - 1 : 1);
-            prevATag.InnerHtml.Append("<"); // Стрелка назад
+            prevATag.InnerHtml.Append("<"); 
 
             prevLiTag.InnerHtml.AppendHtml(prevATag);
             ulTag.InnerHtml.AppendHtml(prevLiTag);
 
-            // Генерация номеров страниц
             for (int i = 1; i <= TotalPages; i++)
             {
                 var liTag = new TagBuilder("li");
@@ -65,14 +62,13 @@ namespace WEB253504Klebeko.UI.TagHelpers
                 ulTag.InnerHtml.AppendHtml(liTag);
             }
 
-            // Добавление стрелки вперед >
             var nextLiTag = new TagBuilder("li");
             nextLiTag.AddCssClass(CurrentPage == TotalPages ? "page-item disabled" : "page-item");
 
             var nextATag = new TagBuilder("a");
             nextATag.AddCssClass("page-link");
             nextATag.Attributes["href"] = GenerateUrl(CurrentPage < TotalPages ? CurrentPage + 1 : TotalPages);
-            nextATag.InnerHtml.Append(">"); // Стрелка вперед
+            nextATag.InnerHtml.Append(">"); 
 
             nextLiTag.InnerHtml.AppendHtml(nextATag);
             ulTag.InnerHtml.AppendHtml(nextLiTag);

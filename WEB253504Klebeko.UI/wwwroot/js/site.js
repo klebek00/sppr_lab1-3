@@ -2,6 +2,7 @@
     $(document).on('click', '.page-link', function (event) {
         event.preventDefault(); 
         var url = $(this).attr('href'); 
+        //$('#medicines-container').load(url);
 
         $.ajax({
             url: url,

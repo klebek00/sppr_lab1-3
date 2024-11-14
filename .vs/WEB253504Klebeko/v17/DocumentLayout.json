@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\components\\cartsummary\\cartsummaryviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\components\\cartsummary\\cartsummaryviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42AE69C7-50A0-4BA5-821B-A55C9D8EDC1D}|WEB253504Klebeko.Tests\\WEB253504Klebeko.Tests.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.tests\\medicinecontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42AE69C7-50A0-4BA5-821B-A55C9D8EDC1D}|WEB253504Klebeko.Tests\\WEB253504Klebeko.Tests.csproj|solutionrelative:web253504klebeko.tests\\medicinecontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42AE69C7-50A0-4BA5-821B-A55C9D8EDC1D}|WEB253504Klebeko.Tests\\WEB253504Klebeko.Tests.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.tests\\medicineservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42AE69C7-50A0-4BA5-821B-A55C9D8EDC1D}|WEB253504Klebeko.Tests\\WEB253504Klebeko.Tests.csproj|solutionrelative:web253504klebeko.tests\\medicineservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\services\\cartservice\\sessioncart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\services\\cartservice\\sessioncart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F4A9935-8B97-4DC7-9EFE-61362E1FC02C}|WEB253504Klebeko.API\\WEB253504Klebeko.API.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.api\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F4A9935-8B97-4DC7-9EFE-61362E1FC02C}|WEB253504Klebeko.API\\WEB253504Klebeko.API.csproj|solutionrelative:web253504klebeko.api\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF14D09E-CA1D-48E6-B9DF-7BC6B98C2BFD}|WEB253504Klebeko.Domain\\WEB253504Klebeko.Domain.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.domain\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF14D09E-CA1D-48E6-B9DF-7BC6B98C2BFD}|WEB253504Klebeko.Domain\\WEB253504Klebeko.Domain.csproj|solutionrelative:web253504klebeko.domain\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F4A9935-8B97-4DC7-9EFE-61362E1FC02C}|WEB253504Klebeko.API\\WEB253504Klebeko.API.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.api\\services\\medicineservice\\medicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F4A9935-8B97-4DC7-9EFE-61362E1FC02C}|WEB253504Klebeko.API\\WEB253504Klebeko.API.csproj|solutionrelative:web253504klebeko.api\\services\\medicineservice\\medicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\controllers\\medicinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\controllers\\medicinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|d:\\3_rehc\\\u0441\u043F\u043F\u0440\\web253504klebeko\\web253504klebeko.ui\\services\\medicineservice\\apimedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21087CBC-E3A9-4E72-9DDE-3AC0435322CD}|WEB253504Klebeko.UI\\WEB253504Klebeko.UI.csproj|solutionrelative:web253504klebeko.ui\\services\\medicineservice\\apimedicineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +34,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WEB253504Klebeko.UI\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowDkAAABeAAAA",
+              "DocumentIndex": 0,
+              "Title": "MedicineControllerTests.cs",
+              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.Tests\\MedicineControllerTests.cs",
+              "RelativeDocumentMoniker": "WEB253504Klebeko.Tests\\MedicineControllerTests.cs",
+              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.Tests\\MedicineControllerTests.cs",
+              "RelativeToolTip": "WEB253504Klebeko.Tests\\MedicineControllerTests.cs",
+              "ViewState": "AQIAAM8AAAAAAAAAAAAmwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T16:20:38.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.Domain\\Models\\Cart.cs",
-              "RelativeDocumentMoniker": "WEB253504Klebeko.Domain\\Models\\Cart.cs",
-              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.Domain\\Models\\Cart.cs",
-              "RelativeToolTip": "WEB253504Klebeko.Domain\\Models\\Cart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T03:25:54.892Z",
+              "WhenOpened": "2024-11-14T16:53:19.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SessionCart.cs",
-              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Services\\CartService\\SessionCart.cs",
-              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Services\\CartService\\SessionCart.cs",
-              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Services\\CartService\\SessionCart.cs",
-              "RelativeToolTip": "WEB253504Klebeko.UI\\Services\\CartService\\SessionCart.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACMAAAAJAAAA",
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.API\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "WEB253504Klebeko.API\\Data\\DbInitializer.cs",
+              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.API\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "WEB253504Klebeko.API\\Data\\DbInitializer.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBoAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T00:46:28.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CartSummaryViewComponent.cs",
-              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Components\\CartSummary\\CartSummaryViewComponent.cs",
-              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Components\\CartSummary\\CartSummaryViewComponent.cs",
-              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Components\\CartSummary\\CartSummaryViewComponent.cs",
-              "RelativeToolTip": "WEB253504Klebeko.UI\\Components\\CartSummary\\CartSummaryViewComponent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T21:13:14.091Z",
+              "WhenOpened": "2024-11-14T16:24:57.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Controllers\\CartController.cs",
-              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Controllers\\CartController.cs",
-              "RelativeToolTip": "WEB253504Klebeko.UI\\Controllers\\CartController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAiwEAAAAAnAAAA",
+              "Title": "MedicineServiceTests.cs",
+              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.Tests\\MedicineServiceTests.cs",
+              "RelativeDocumentMoniker": "WEB253504Klebeko.Tests\\MedicineServiceTests.cs",
+              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.Tests\\MedicineServiceTests.cs",
+              "RelativeToolTip": "WEB253504Klebeko.Tests\\MedicineServiceTests.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAADwv6EAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:12:27.552Z",
+              "WhenOpened": "2024-11-14T15:56:00.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SessionExtensions.cs",
-              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Extensions\\SessionExtensions.cs",
-              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Extensions\\SessionExtensions.cs",
-              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Extensions\\SessionExtensions.cs",
-              "RelativeToolTip": "WEB253504Klebeko.UI\\Extensions\\SessionExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "MedicineService.cs",
+              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.API\\Services\\MedicineService\\MedicineService.cs",
+              "RelativeDocumentMoniker": "WEB253504Klebeko.API\\Services\\MedicineService\\MedicineService.cs",
+              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.API\\Services\\MedicineService\\MedicineService.cs",
+              "RelativeToolTip": "WEB253504Klebeko.API\\Services\\MedicineService\\MedicineService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAawBEAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T19:32:30.375Z",
+              "WhenOpened": "2024-11-14T15:13:48.46Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Program.cs",
-              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Program.cs",
-              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Program.cs",
-              "RelativeToolTip": "WEB253504Klebeko.UI\\Program.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAgwEUAAAAAAAAA",
+              "Title": "ApiMedicineService.cs",
+              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Services\\MedicineService\\ApiMedicineService.cs",
+              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Services\\MedicineService\\ApiMedicineService.cs",
+              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Services\\MedicineService\\ApiMedicineService.cs",
+              "RelativeToolTip": "WEB253504Klebeko.UI\\Services\\MedicineService\\ApiMedicineService.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAowJQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:06:09.614Z",
+              "WhenOpened": "2024-11-14T14:20:58.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MedicineController.cs",
+              "DocumentMoniker": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Controllers\\MedicineController.cs",
+              "RelativeDocumentMoniker": "WEB253504Klebeko.UI\\Controllers\\MedicineController.cs",
+              "ToolTip": "D:\\3_rehc\\\u0421\u041F\u041F\u0420\\WEB253504Klebeko\\WEB253504Klebeko.UI\\Controllers\\MedicineController.cs",
+              "RelativeToolTip": "WEB253504Klebeko.UI\\Controllers\\MedicineController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwC8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T22:53:32.44Z",
               "EditorCaption": ""
             }
           ]
