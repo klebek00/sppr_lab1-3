@@ -305,3 +305,12 @@ D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\System.
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.AspNetCore.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.UI\bin\Debug\net8.0\Serilog.Sinks.File.dll

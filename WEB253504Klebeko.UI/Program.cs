@@ -14,10 +14,17 @@ using WEB253504Klebeko.UI.HelperClasses;
 using WEB253504Klebeko.UI.Authorization;
 using WEB253504Klebeko.Domain.Models;
 using WEB253504Klebeko.UI.Services.CartService;
+using Serilog;
+using WEB253504Klebeko.UI.Middleware;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddDistributedMemoryCache();
@@ -83,7 +90,9 @@ else
     app.UseHsts();
 }
 
+app.UseMiddleware<LoggingMiddleware>();
 
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
