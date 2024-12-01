@@ -40,7 +40,6 @@ namespace WEB253504Klebeko.API.Controllers
 
         [HttpGet("page{pageNo}")]
         [HttpGet]
-        [AllowAnonymous]
         public async Task<ActionResult<ResponseData<List<Medicines>>>> GetMedicines(string? category, int pageNo = 1, int pageSize = 3)
         {
             Console.WriteLine($"Category: {category}, Page No: {pageNo}, Page Size: {pageSize}");

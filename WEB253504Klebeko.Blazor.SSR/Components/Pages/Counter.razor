@@ -1,0 +1,71 @@
+﻿@page "/counter"
+@page "/counter/{InitialValue:int}"
+@rendermode InteractiveServer
+
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<EditForm Model="counterModel" OnValidSubmit="OnSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="mb-3">
+        <label for="counterValue">Enter a value (1-10):</label>
+        <InputNumber @bind-Value="counterModel.Value" id="counterValue" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Set</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
+
+@code {
+    [Parameter]
+    public int? InitialValue { get; set; }
+
+    private int currentCount = 0;
+    private string errorMessage = string.Empty;
+
+    private CounterModel counterModel = new CounterModel { Value = 1 };
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    protected override void OnParametersSet()
+    {
+        if (InitialValue.HasValue)
+        {
+            if (InitialValue.Value >= 1 && InitialValue.Value <= 10)
+            {
+                currentCount = InitialValue.Value;
+                errorMessage = string.Empty;
+            }
+            else
+            {
+                errorMessage = $"Invalid initial value: {InitialValue.Value}. Value must be between 1 and 10.";
+            }
+        }
+    }
+
+    private void OnSubmit()
+    {
+        currentCount = counterModel.Value;
+        errorMessage = string.Empty;
+    }
+
+    public class CounterModel
+    {
+        [Range(1, 10, ErrorMessage = "Value must be between 1 and 10.")]
+        public int Value { get; set; }
+    }
+}

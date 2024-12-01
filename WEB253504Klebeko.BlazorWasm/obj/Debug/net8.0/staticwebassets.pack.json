@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\obj\\Debug\\net8.0\\compressed\\u90o5ehqg3.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WEB253504Klebeko.BlazorWasm.styles.css",
+      "PackagePath": "staticwebassets\\WEB253504Klebeko.BlazorWasm.styles.css"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\3_rehc\\СППР\\WEB253504Klebeko\\WEB253504Klebeko.BlazorWasm\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WEB253504Klebeko.BlazorWasm.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WEB253504Klebeko.BlazorWasm.props",
+      "PackagePath": "build\\WEB253504Klebeko.BlazorWasm.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WEB253504Klebeko.BlazorWasm.props",
+      "PackagePath": "buildMultiTargeting\\WEB253504Klebeko.BlazorWasm.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WEB253504Klebeko.BlazorWasm.props",
+      "PackagePath": "buildTransitive\\WEB253504Klebeko.BlazorWasm.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

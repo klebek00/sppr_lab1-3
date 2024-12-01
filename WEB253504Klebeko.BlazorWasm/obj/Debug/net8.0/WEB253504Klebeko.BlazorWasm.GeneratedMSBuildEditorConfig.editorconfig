@@ -1,0 +1,83 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = WEB253504Klebeko.BlazorWasm
+build_property.RootNamespace = WEB253504Klebeko.BlazorWasm
+build_property.ProjectDir = D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.BlazorWasm\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.BlazorWasm
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Components/CategorySelector.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXRlZ29yeVNlbGVjdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Components/MedicinesDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNZWRpY2luZXNEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Components/MedicinesList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNZWRpY2luZXNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Components/Pager.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Layout/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Layout/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Pages/Authentication.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Pages/Medicines.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVkaWNpbmVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xyr88loman
+
+[D:/3_rehc/СППР/WEB253504Klebeko/WEB253504Klebeko.BlazorWasm/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-rssif3r5mq

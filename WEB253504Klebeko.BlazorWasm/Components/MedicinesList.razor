@@ -1,0 +1,55 @@
+﻿@namespace WEB253504Klebeko.BlazorWasm.Components
+@using WEB253504Klebeko.Domain.Entities
+@inject IDataService DataService
+
+@if (!DataService.Success)
+{
+    <p><em>Error: @DataService.ErrorMessage</em></p>
+}
+else if (DataService.Medicines.Count == 0)
+{
+    <p>No med available.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var med in DataService.Medicines)
+            {
+                <tr>
+                    <td>@med.Name</td>
+                    <td>@med.Description</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => MedicineSelected.InvokeAsync(med.Id)">
+                            Подробнее
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@implements IDisposable
+
+@code {
+    [Parameter]
+    public EventCallback<int> MedicineSelected { get; set; }
+
+    protected override void OnInitialized()
+    {
+        DataService.DataLoaded += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        DataService.DataLoaded -= StateHasChanged;
+    }
+}

@@ -396,3 +396,12 @@ D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\obj\Debug\net8.0\refi
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\obj\Debug\net8.0\WEB253504Klebeko.Tests.pdb
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\obj\Debug\net8.0\WEB253504Klebeko.Tests.genruntimeconfig.cache
 D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\obj\Debug\net8.0\ref\WEB253504Klebeko.Tests.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.AspNetCore.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+D:\3_rehc\СППР\WEB253504Klebeko\WEB253504Klebeko.Tests\bin\Debug\net8.0\Serilog.Sinks.File.dll

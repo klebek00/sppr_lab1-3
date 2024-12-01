@@ -1,0 +1,27 @@
+﻿@page "/medicines"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@using WEB253504Klebeko.BlazorWasm.Components
+@using WEB253504Klebeko.Domain.Entities
+
+<PageTitle>Medicines</PageTitle>
+
+<CategorySelector />
+<MedicinesList MedicineSelected="OnMedicineSelected" />
+<Pager />
+<MedicinesDetails SelectedMedicine="SelectedMedicine" />
+
+@code {
+    [Inject] required public IDataService DataService { get; set; }
+    WEB253504Klebeko.Domain.Entities.Medicines? SelectedMedicine { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await DataService.GetProductListAsync();
+    }
+
+    void OnMedicineSelected(int id)
+    {
+        SelectedMedicine = DataService.Medicines.FirstOrDefault(m => m.Id == id);
+    }
+}

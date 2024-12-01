@@ -1,0 +1,18 @@
+﻿@namespace WEB253504Klebeko.BlazorWasm.Components
+@using WEB253504Klebeko.Domain.Entities
+
+@if (SelectedMedicine != null)
+{
+    <div>
+        <h3>@SelectedMedicine.Name</h3>
+        <p>@SelectedMedicine.Description</p>
+        <img src="@SelectedMedicine.Image" alt="Изображение" style="max-width: 300px; max-height: 300px; object-fit: contain;" />
+        <p>Категория: @(SelectedMedicine.Category?.Name)</p>
+        <p>Вес: @SelectedMedicine.Price BYN</p>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Medicines? SelectedMedicine { get; set; }
+}
